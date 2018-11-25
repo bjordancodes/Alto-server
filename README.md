@@ -39,28 +39,28 @@ Once you sign into Postman, you can import my pre-made tests.
 
 Start in the top left hand corner, with the 'import' button.
 
-<img src="https://github.com/bjordancodes/Alto-server/blob/master/import.png?raw=true" width="400"/>
+<img src="https://github.com/bjordancodes/Alto-server/blob/master/images/import.png?raw=true" width="400"/>
 
 Next, choose the postman_collect.json file from the repository files.
 
-<img src="https://github.com/bjordancodes/Alto-server/blob/master/import%202.png?raw=true" width="700"/>
+<img src="https://github.com/bjordancodes/Alto-server/blob/master/images/import%202.png?raw=true" width="700"/>
 
 Then we need to expand the file, from the populated list on the left side of the screen.
 
-<img src="https://github.com/bjordancodes/Alto-server/blob/master/run%20test.png" width="400"/>
+<img src="https://github.com/bjordancodes/Alto-server/blob/master/images/run%20test.png" width="400"/>
 
 click "Run".
 
-<img src="https://github.com/bjordancodes/Alto-server/blob/master/run%20test%202.png?raw=true" width="400"/>
+<img src="https://github.com/bjordancodes/Alto-server/blob/master/images/run%20test%202.png?raw=true" width="400"/>
 
 Last button, I promise.
 
 
-<img src="https://github.com/bjordancodes/Alto-server/blob/master/run%20test%203.png?raw=true" width="400"/>
+<img src="https://github.com/bjordancodes/Alto-server/blob/master/images/run%20test%203.png?raw=true" width="400"/>
 
 And your tests should be run, all returning "passed"!
 
-<img src="https://github.com/bjordancodes/Alto-server/blob/master/finished%20tests.PNG?raw=true"/>
+<img src="https://github.com/bjordancodes/Alto-server/blob/master/images/finished%20tests.PNG?raw=true"/>
 
 You can also select individual files from the left panel if you'd like to run each test individually and look at the responses.
 
