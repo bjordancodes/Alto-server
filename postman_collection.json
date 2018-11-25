@@ -1,0 +1,1287 @@
+{
+	"info": {
+		"_postman_id": "3ea0b089-7371-4f9e-a450-97f6f2e11ec6",
+		"name": "alto-server-tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3001/api/vehicle/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "08030871-3c3c-452e-a987-42392877f875",
+						"exec": [
+							"pm.test(\"Successful GET request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ vehicle: {\n        \"make\": \"Honda\",\n        \"model\": \"Accord\",\n        \"year\": \"2019\",\n        \"color\": \"Titanium Blue\",\n        \"VIN\": \"F1234567898083456\",\n        \"driver_id\": \"0\"\n    }\n }"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/vehicle/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"vehicle",
+						""
+					]
+				},
+				"description": "Get all vehicles"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/vehicle/1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bcbf53a0-e525-41be-b6f1-e59b9ef61161",
+						"exec": [
+							"pm.test(\"Successful GET request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/vehicle/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"vehicle",
+						"1"
+					]
+				},
+				"description": "Get one vehicle"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/vehicle/5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d2557a70-dc64-46ee-b9c5-4d49c8f0c0b4",
+						"exec": [
+							"pm.test(\"Correctly responded to invalid request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([500]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/vehicle/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"vehicle",
+						"5"
+					]
+				},
+				"description": "Fail to get one vehicle"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/vehicle/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "56669e12-3728-40da-a622-feb8e5404a1d",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"vehicle\": {\n        \"make\": \"Honda\",\n        \"model\": \"Accord\",\n        \"year\": \"2019\",\n        \"color\": \"Titanium Blue\",\n        \"VIN\": \"F1234567898083456\",\n        \"driver_id\": \"0\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/vehicle/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"vehicle",
+						""
+					]
+				},
+				"description": "Adds vehicle"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/vehicle/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "56669e12-3728-40da-a622-feb8e5404a1d",
+						"exec": [
+							"pm.test(\"Correctly responded to invalid request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([500]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/vehicle/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"vehicle",
+						""
+					]
+				},
+				"description": "No vehicle information attached to the body"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/vehicle/1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "56669e12-3728-40da-a622-feb8e5404a1d",
+						"exec": [
+							"pm.test(\"Correctly responded to invalid request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([500]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/vehicle/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"vehicle",
+						"1"
+					]
+				},
+				"description": "No vehicle information attached"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/vehicle/1 Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "56669e12-3728-40da-a622-feb8e5404a1d",
+						"exec": [
+							"pm.test(\"Correctly responded to invalid request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([500]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"vehicle\": {\n        \"make\": \"Honda\",\n        \"model\": \"Accord\",\n        \"year\": \"2019\",\n        \"color\": \"Titanium Blue\",\n        \"VIN\": \"F1234567898083456\",\n        \"driver_id\": \"0\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/vehicle/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"vehicle",
+						"5"
+					]
+				},
+				"description": "No vehicle information attached"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/vehicle/1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9edb9d5b-6134-431c-be90-43816d659195",
+						"exec": [
+							"pm.test(\"successful PUT request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"vehicle\": {\n        \"make\": \"Honda\",\n        \"model\": \"Accord\",\n        \"year\": \"2019\",\n        \"color\": \"Titanium Blue\",\n        \"VIN\": \"F1234567898083456\",\n        \"driver_id\": \"0\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/vehicle/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"vehicle",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/vehicle/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a5435bc4-0f92-49aa-8450-4e8122a23ace",
+						"exec": [
+							"pm.test(\"Correctly responded to invalid request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([500]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/vehicle/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"vehicle",
+						"5"
+					]
+				},
+				"description": "Does the error code register properly?"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/vehicle/3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a8f641f3-e22f-42f1-9145-b3bc2922db5c",
+						"exec": [
+							"pm.test(\"Successful DELETE request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/vehicle/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"vehicle",
+						"3"
+					]
+				},
+				"description": "Delete a Vehicle"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/driver/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dfb73b29-1e84-4caf-a7be-02a8a6b4afc6",
+						"exec": [
+							"pm.test(\"Successful GET request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/driver/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"driver",
+						""
+					]
+				},
+				"description": "Get all drivers"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/driver/1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dfb73b29-1e84-4caf-a7be-02a8a6b4afc6",
+						"exec": [
+							"pm.test(\"Successful GET request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/driver/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"driver",
+						"1"
+					]
+				},
+				"description": "Get one driver"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/vehicle/5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bcbf53a0-e525-41be-b6f1-e59b9ef61161",
+						"exec": [
+							"pm.test(\"Correctly responded to invalid request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([500]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/vehicle/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"vehicle",
+						"5"
+					]
+				},
+				"description": "Fails to get one vehicle"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/driver/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dc0cf859-240b-4f6c-9f62-ff9fd65067e6",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"driver\": {\n        \"driver_name\": \"Greta\",\n        \"driver_description\": \"Greta just moved here from England and she's super sweet\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/driver/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"driver",
+						""
+					]
+				},
+				"description": "Fail to add new driver"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/driver/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3934017b-133e-4d63-a4b5-9e787b9e08a5",
+						"exec": [
+							"pm.test(\"Correctly responded to invalid request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([500]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"some context\": \"other thing\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/driver/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"driver",
+						""
+					]
+				},
+				"description": "Failed to add a new driver"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/driver/1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9724a675-870f-4af7-92c9-8a758017d934",
+						"exec": [
+							"pm.test(\"Successful PUT request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"driver\": {\n        \"driver_name\": \"Greta\",\n        \"driver_description\": \"Greta just moved here from England and she's super sweet\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/driver/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"driver",
+						"1"
+					]
+				},
+				"description": "Update driver"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/driver/5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9724a675-870f-4af7-92c9-8a758017d934",
+						"exec": [
+							"pm.test(\"Successfully rejected invalid request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([500]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"driver\": {\n        \"driver_name\": \"Greta\",\n        \"driver_description\": \"Greta just moved here from England and she's super sweet\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/driver/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"driver",
+						"5"
+					]
+				},
+				"description": "No driver found to update"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/driver/1 fail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9724a675-870f-4af7-92c9-8a758017d934",
+						"exec": [
+							"pm.test(\"Successfully rejected invalid request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([500]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/driver/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"driver",
+						"1"
+					]
+				},
+				"description": "No driver information found to update"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/driver/3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e4d8f837-e800-425b-9d6a-213ef9382d03",
+						"exec": [
+							"pm.test(\"Successful DELETE request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/driver/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"driver",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/driver/5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e4d8f837-e800-425b-9d6a-213ef9382d03",
+						"exec": [
+							"pm.test(\"Responded correctly to invalid request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([500]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/driver/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"driver",
+						"5"
+					]
+				},
+				"description": "unsuccessful delete request"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/trip",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5fbcf61a-3aa4-415c-9f1a-6afe8a4d1804",
+						"exec": [
+							"pm.test(\"Successful GET request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/trip",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"trip"
+					]
+				},
+				"description": "get all trips"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/trip/1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5fbcf61a-3aa4-415c-9f1a-6afe8a4d1804",
+						"exec": [
+							"pm.test(\"Successful GET request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/trip/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"trip",
+						"1"
+					]
+				},
+				"description": "get one trip"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/trip/5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "43768e56-219f-43fc-8ab3-70a86f408c81",
+						"exec": [
+							"pm.test(\"Responded correctly to invalid request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([500]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/trip/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"trip",
+						"5"
+					]
+				},
+				"description": "cannot get request"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/trip",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4d368675-17bc-4aa1-8d34-bdc0391cb8ed",
+						"exec": [
+							"pm.test(\"Successful GET request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"trip\": \n\t{\t\"origin\": \"123 New Address Way\",\n        \"destination\": \"123 Destination Blvd\",\n        \"customer_id\": 1,\n        \"driver_id\": 2,\n        \"vehicle_id\": 2,\n        \"fare\": 110,\n        \"date\": \"11/24/2018\",\n        \"notes\": \"I'll meet you out front\",\n        \"payment_type\": \"Visa01\",\n        \"vibe\": \"Dubstep Beetz\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/trip",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"trip"
+					]
+				},
+				"description": "add new trip"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/trip",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c9b97b3-7740-456d-b159-31aaba521d44",
+						"exec": [
+							"pm.test(\"Responded correctly to invalid request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([500]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/trip",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"trip"
+					]
+				},
+				"description": "failed add trip"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/trip/1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9724a675-870f-4af7-92c9-8a758017d934",
+						"exec": [
+							"pm.test(\"Successful GET request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"trip\": \n\t{\t\"origin\": \"123 New Address Way\",\n        \"destination\": \"123 Destination Blvd\",\n        \"customer_id\": 1,\n        \"driver_id\": 2,\n        \"vehicle_id\": 2,\n        \"fare\": 110,\n        \"date\": \"11/24/2018\",\n        \"notes\": \"I'll meet you out front\",\n        \"payment_type\": \"Visa01\",\n        \"vibe\": \"Dubstep Beetz\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/trip/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"trip",
+						"1"
+					]
+				},
+				"description": "Updated trip"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/trip/1 fail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9724a675-870f-4af7-92c9-8a758017d934",
+						"exec": [
+							"pm.test(\"Successfully rejected invalid request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([500]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/trip/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"trip",
+						"1"
+					]
+				},
+				"description": "No trip information found to update"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/trip/5 fail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9724a675-870f-4af7-92c9-8a758017d934",
+						"exec": [
+							"pm.test(\"Successfully rejected invalid request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([500]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"trip\": \n\t{\t\"origin\": \"123 New Address Way\",\n        \"destination\": \"123 Destination Blvd\",\n        \"customer_id\": 1,\n        \"driver_id\": 2,\n        \"vehicle_id\": 2,\n        \"fare\": 110,\n        \"date\": \"11/24/2018\",\n        \"notes\": \"I'll meet you out front\",\n        \"payment_type\": \"Visa01\",\n        \"vibe\": \"Dubstep Beetz\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/trip/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"trip",
+						"5"
+					]
+				},
+				"description": "No trip id found to update"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/trip/3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fe3f7216-c6c5-4b9b-8e58-de087a75eb2b",
+						"exec": [
+							"pm.test(\"Successful GET request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/trip/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"trip",
+						"3"
+					]
+				},
+				"description": "delete trip"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/trip/5 fail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "43b677dc-467d-4abf-9376-46ff01890118",
+						"exec": [
+							"pm.test(\"Successfully rejected invalid request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([500]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/trip/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"trip",
+						"5"
+					]
+				},
+				"description": "trip id not found"
+			},
+			"response": []
+		}
+	]
+}
