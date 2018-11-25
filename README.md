@@ -41,7 +41,7 @@ Start in the top left hand corner, with the 'import' button.
 
 <img src="https://github.com/bjordancodes/Alto-server/blob/master/images/import.png?raw=true" width="400"/>
 
-Next, choose the postman_collect.json file from the repository files.
+Next, choose the postman_collection.json file from the repository files.
 
 <img src="https://github.com/bjordancodes/Alto-server/blob/master/images/import%202.png?raw=true" width="700"/>
 
