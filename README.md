@@ -4,7 +4,7 @@ This is a sample API based on image mockups from the Alto app.
 <p/>
 I began by working out my schema, choosing what column names and data types I would need.
 <p/>
-<img src="https://raw.githubusercontent.com/bjordancodes/Alto-server/master/alto%20img.jpg" height="700px"/>
+<img src="https://raw.githubusercontent.com/bjordancodes/Alto-server/master/images/alto%20img.jpg" height="700px"/>
 <p/>
 Then I set up the node server using the express and body-parser packages.
 <p/>
