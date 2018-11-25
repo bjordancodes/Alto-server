@@ -49,9 +49,14 @@ Then we need to expand the file, from the populated list on the left side of the
 
 <img src="https://github.com/bjordancodes/Alto-server/blob/master/run%20test.png" width="400"/>
 
-Last button I promise.
+click "Run".
 
 <img src="https://github.com/bjordancodes/Alto-server/blob/master/run%20test%202.png?raw=true" width="400"/>
+
+Last button, I promise.
+
+
+<img src="https://github.com/bjordancodes/Alto-server/blob/master/run%20test%203.png?raw=true" width="400"/>
 
 And your tests should be run, all returning "passed"!
 
