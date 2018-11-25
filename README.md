@@ -15,7 +15,7 @@ axios and set up PostgreSQL calls to bring in and organize my data.
 
 For example, I would link "driver_id", "vehicle_id" and "customer_id" to their respective tables using join requests
 so that the necessary data was populated on the front end. If you would like to see an example
-of these PostgreSQL and axios calls you can check them out in my Dallas Dallas SC project here: 
+of these PostgreSQL and axios calls you can check them out in my Dash Dallas SC project here: 
 
 database calls: <a href="https://github.com/bjordancodes/dash-dallas-sc/tree/master/db" target="blank">https://github.com/bjordancodes/dash-dallas-sc/tree/master/db</a><br/>
 server and controllers: <a href= "https://github.com/bjordancodes/dash-dallas-sc/tree/master/server" target="blank">https://github.com/bjordancodes/dash-dallas-sc/tree/master/server</a>
