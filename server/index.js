@@ -3,7 +3,7 @@ const { json } = require('body-parser');
 
 const {getVehicle, getOneVehicle, newVehicle, updateVehicle, deleteVehicle} = require('./controllers/vehicle_controller');
 const {getDriver, getOneDriver, newDriver, updateDriver, deleteDriver} = require('./controllers/driver_controller');
-
+const {getTrip, getOneTrip, newTrip, updateTrip, deleteTrip} = require('./controllers/trip_controller');
 
 const port = 3001;
 
@@ -18,10 +18,11 @@ app.put('/api/driver/:id', updateDriver);
 app.delete('/api/driver/:id', deleteDriver);
 
 //Trip Controller
-// app.get('/api/trip/', getTrip);
-// app.post('/api/trip/', newTrip);
-// app.put('/api/trip/:id', updateTrip);
-// app.delete('/api/trip/:id', deleteTrip);
+app.get('/api/trip/', getTrip);
+app.get('/api/trip/:id', getOneTrip)
+app.post('/api/trip/', newTrip);
+app.put('/api/trip/:id', updateTrip);
+app.delete('/api/trip/:id', deleteTrip);
 
 //Vehicle Controller
 app.get('/api/vehicle/', getVehicle);

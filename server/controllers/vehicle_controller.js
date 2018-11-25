@@ -22,7 +22,6 @@ module.exports = {
     },
     newVehicle: (req, res) => {
        const {vehicle} = req.body;
-       console.log(req.body);
        const newVehicle = {
         vehicle_id: Vehicle.length + 1,
         make: vehicle.make,

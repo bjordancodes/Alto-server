@@ -45,7 +45,7 @@ module.exports = {
         const {driver} = req.body;
         const {id} = req.params;
         const index = Driver.findIndex((e) => e.driver_id == id);
-
+        //here 'if' checks that the id number exists in the array
         if (index == -1){
             return res.status(500).send("No driver selected");
         }
