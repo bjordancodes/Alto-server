@@ -1,6 +1,6 @@
 /* please see notes in ./trip.js */
 
-var driver = [
+var Driver = [
     {
         driver_id: 0,
         driver_name: "Sarah",
@@ -13,4 +13,4 @@ var driver = [
     }
 ]
 
-module.exports = driver;
+module.exports = Driver;

@@ -2,8 +2,8 @@ const express = require('express');
 const { json } = require('body-parser');
 
 const {getVehicle, getOneVehicle, newVehicle, updateVehicle, deleteVehicle} = require('./controllers/vehicle_controller');
+const {getDriver, getOneDriver, newDriver, updateDriver, deleteDriver} = require('./controllers/driver_controller');
 
-const Vehicle = require('./db/vehicle');
 
 const port = 3001;
 
@@ -11,10 +11,11 @@ const app = express();
 app.use(json());
 
 //Driver Controller
-// app.get('/api/driver/', getDriver);
-// app.post('/api/driver/', newDriver);
-// app.put('/api/driver/:id', updateDriver);
-// app.delete('/api/driver/:id', deleteDriver);
+app.get('/api/driver/', getDriver);
+app.get('/api/driver/:id', getOneDriver)
+app.post('/api/driver/', newDriver);
+app.put('/api/driver/:id', updateDriver);
+app.delete('/api/driver/:id', deleteDriver);
 
 //Trip Controller
 // app.get('/api/trip/', getTrip);
